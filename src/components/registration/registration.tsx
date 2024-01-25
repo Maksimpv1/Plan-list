@@ -2,6 +2,7 @@ import { Formik } from "formik"
 import * as yup from "yup"
 
 import '../../index.scss'
+import { NavLink } from "react-router-dom"
 
 interface IintialValues {
     firstName: string,
@@ -121,6 +122,9 @@ export const RegistrationForm = () =>{
                                 <button type="submit" disabled={ !isValid || !dirty } >
                                     Registration
                                 </button>
+                            </div>
+                            <div className="create_acc">
+                                <NavLink to="/login" className="nav-link">If you have account. Log in</NavLink>
                             </div>
                         </form>
                     )}

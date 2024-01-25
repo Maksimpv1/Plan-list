@@ -87,6 +87,21 @@ body {
         cursor: not-allowed;
       }
     }
+    .create_acc{
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      color: black;
+      .nav-link{
+        color: black;
+        cursor:pointer;
+        margin: 20px auto;
+        text-decoration: underline;
+        &:hover{
+          color: #4e4a4a;
+        }
+      }
+    }
   }        
   }
 }
