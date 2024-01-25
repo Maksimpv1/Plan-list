@@ -2,10 +2,20 @@ import { Formik } from "formik"
 import * as yup from "yup"
 
 import '../../index.scss'
+import { NavLink, useNavigate } from "react-router-dom"
+import { useAppDispatch } from "../../redux/store/store"
+import { setAuth } from "../../redux/reducers/reducure"
 
 export const LoginForm = () =>{
+
+    const navigate = useNavigate();
+
+    const dispatch = useAppDispatch();
+
     const handleLogin = (email:any, password:any) => {
         console.log('Вход выполнен')
+        dispatch(setAuth())
+        navigate('/')
     }
 
     const ValidationsSchema = yup.object().shape({
@@ -58,6 +68,9 @@ export const LoginForm = () =>{
                             </div>
                             <div>
                                 <button type="submit" disabled={!isValid || !dirty}>Login</button>
+                            </div>
+                            <div className="create_acc">
+                                <NavLink to="/registration" className="nav-link">Don't have an account? Sign up</NavLink>
                             </div>
                         </form>
                     )}
